@@ -34,7 +34,7 @@ export const editaAddress = createAsyncThunk(
   "/addresses/editaAddress",
   async ({ userId, addressId, formData }) => {
     const response = await axios.put(
-      `https://server-ehy9hvd1d-nabiha-khans-projects-954d6523.vercel.app/api/shop/address/update/${userId}/${addressId}`,
+      `${API_BASE_URL}/api/shop/address/update/${userId}/${addressId}`,
       formData
     );
 
@@ -46,7 +46,7 @@ export const deleteAddress = createAsyncThunk(
   "/addresses/deleteAddress",
   async ({ userId, addressId }) => {
     const response = await axios.delete(
-      `https://server-ehy9hvd1d-nabiha-khans-projects-954d6523.vercel.app/api/shop/address/delete/${userId}/${addressId}`
+      `${API_BASE_URL}/api/shop/address/delete/${userId}/${addressId}`
     );
 
     return response.data;
